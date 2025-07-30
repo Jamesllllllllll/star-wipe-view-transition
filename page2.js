@@ -53,6 +53,51 @@ function addColoredSparkleEffect() {
   });
 }
 
+function showCodeModal() {
+  const modal = document.getElementById('codeModal');
+  modal.showModal();
+  
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.close();
+    }
+  });
+}
+
+function copyCSS() {
+  const cssCode = `@view-transition {
+    navigation: auto;
+}
+
+/* Star Wipe Animations */
+
+::view-transition-new(root) {
+    animation: star-wipe-in 0.9s ease-in-out;
+}
+
+@keyframes star-wipe-in {
+    from {
+        clip-path: polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%);
+    }
+    to {
+        clip-path: polygon(calc(50vmin + 50vw - 50vmin) -300vmin, calc(188vmin + 50vw - 50vmin) -24vmin, calc(484vmin + 50vw - 50vmin) -24vmin, calc(244vmin + 50vw - 50vmin) 152vmin, calc(332vmin + 50vw - 50vmin) 424vmin, calc(50vmin + 50vw - 50vmin) 256vmin, calc(-232vmin + 50vw - 50vmin) 424vmin, calc(-144vmin + 50vw - 50vmin) 152vmin, calc(-384vmin + 50vw - 50vmin) -24vmin, calc(-88vmin + 50vw - 50vmin) -24vmin);
+    }
+}`;
+
+  navigator.clipboard.writeText(cssCode).then(function() {
+    const button = document.querySelector('.copy-button');
+    button.textContent = 'Copied!';
+    button.classList.add('copied');
+    
+    setTimeout(function() {
+      button.textContent = 'Copy CSS';
+      button.classList.remove('copied');
+    }, 2000);
+  }).catch(function(err) {
+    console.error('Failed to copy: ', err);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   createHearts();
   createConstellation();
