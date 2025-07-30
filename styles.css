@@ -12,14 +12,8 @@
     animation: star-wipe-in 0.9s ease-in-out;
 }
 
-/* Required to show the old page content during the transition */
 @keyframes star-wipe-out {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 1;
-    }
+    /* Required to keep old page visible during transition */
 }
 
 @keyframes star-wipe-in {
