@@ -71,8 +71,22 @@ function copyCSS() {
 
 /* Star Wipe Animations */
 
+::view-transition-old(root) {
+    animation: star-wipe-out 0.9s ease-in-out;
+}
+
 ::view-transition-new(root) {
     animation: star-wipe-in 0.9s ease-in-out;
+}
+
+/* Required to show the old page content during the transition */
+@keyframes star-wipe-out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes star-wipe-in {

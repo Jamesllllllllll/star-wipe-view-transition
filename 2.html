@@ -31,8 +31,22 @@
          <div>&nbsp;&nbsp;<span class="property">navigation</span>: <span class="value">auto</span>;</div>
          <div>}</div>
          <br>
+         <div><span class="selector">::view-transition-old(root)</span> {</div>
+         <div>&nbsp;&nbsp;<span class="property">animation</span>: <span class="animation">star-wipe-out</span> <span class="value">0.9s</span> <span class="value">ease-in-out</span>;</div>
+         <div>}</div>
+         <br>
          <div><span class="selector">::view-transition-new(root)</span> {</div>
          <div>&nbsp;&nbsp;<span class="property">animation</span>: <span class="animation">star-wipe-in</span> <span class="value">0.9s</span> <span class="value">ease-in-out</span>;</div>
+         <div>}</div>
+         <br>
+         <div><span class="comment">/* Required to show the old page content during the transition */</span></div>
+         <div><span class="keyframes">@keyframes</span> <span class="animation">star-wipe-out</span> {</div>
+         <div>&nbsp;&nbsp;<span class="property">from</span> {</div>
+         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">opacity</span>: <span class="value">1</span>;</div>
+         <div>&nbsp;&nbsp;}</div>
+         <div>&nbsp;&nbsp;<span class="property">to</span> {</div>
+         <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="property">opacity</span>: <span class="value">1</span>;</div>
+         <div>&nbsp;&nbsp;}</div>
          <div>}</div>
          <br>
          <div><span class="keyframes">@keyframes</span> <span class="animation">star-wipe-in</span> {</div>
