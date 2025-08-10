@@ -1,5 +1,5 @@
 const LIKES_API_BASE = 'https://jamesllllllllll--019894a514b47659ac14319f8b619533.web.val.run/api';
-const WEBSITE_DOMAIN = 'starwipe.fun';
+const LIKES_ID = 'starwipe.fun';
 
 class LikeComponent {
     constructor() {
@@ -8,7 +8,6 @@ class LikeComponent {
         this.heart = document.getElementById('heart');
         
         if (this.likeButton) {
-            this.currentPageUrl = window.location.pathname;
             this.init();
         }
     }
@@ -20,7 +19,7 @@ class LikeComponent {
 
     async loadLikes() {
         try {
-            const url = `${LIKES_API_BASE}/likes/${WEBSITE_DOMAIN}`;
+            const url = `${LIKES_API_BASE}/likes/${LIKES_ID}`;
             const response = await fetch(url);
             const data = await response.json();
             
@@ -41,7 +40,7 @@ class LikeComponent {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    website: WEBSITE_DOMAIN
+                    id: LIKES_ID
                 })
             });
 
